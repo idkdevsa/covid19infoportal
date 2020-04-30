@@ -17,7 +17,7 @@ const App = () => {
   } = useContext(StatsContext);
 
   return (
-    <Container fluid={true} style={{ height: "100vh" }}>
+    <Container className="light-mode" fluid={true} style={{ height: "100vh" }}>
       <HeaderMain />
       {isLoading ? <PageLoader /> : <LayoutMain statData={filteredData} />}
       <FooterMain

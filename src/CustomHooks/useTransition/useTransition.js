@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Transition } from "react-transition-group";
 
+// TODO - Finish and implement
+
 const duration = 300;
 
 const defaultStyle = {

@@ -1,15 +1,14 @@
 import React, { useState, createContext } from "react";
+import App from "./App";
+
 import { Countries } from "./Api/CountryListData";
 import useFetchData from "./CustomHooks/useFetchData/useFetchData";
-import App from "./App";
 import useDataFilter from "./CustomHooks/useDataFilter/useDataFilter";
 
 const StatsContext = createContext();
 
 function StatsProvider() {
-  // setup state hooks
   const [currentCountry, setCurrentCountry] = useState("All");
-  //setup custom hooks
 
   const [{ data, isLoading }] = useFetchData(
     "https://covid-193.p.rapidapi.com",
@@ -24,6 +23,8 @@ function StatsProvider() {
     true
   );
 
+  // handleQuery sets state for current country
+
   const [{ filteredData }] = useDataFilter(
     isLoading,
     [data, Countries],
@@ -31,9 +32,13 @@ function StatsProvider() {
     currentCountry
   );
 
+  // use in components that submit new country for filtering
+
   const handleQuery = (e) => {
     setCurrentCountry(e);
   };
+
+  // TODO split context to avoid rerendering
 
   return (
     <StatsContext.Provider

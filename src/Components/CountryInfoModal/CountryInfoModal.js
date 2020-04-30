@@ -7,7 +7,7 @@ import CardDeck from "react-bootstrap/CardDeck";
 const CountryInfoModal = (props) => {
   const [modalShow, setModalShow] = useState(false);
 
-  const MyVerticallyCenteredModal = (props) => {
+  const VertModal = (props) => {
     return (
       <Modal
         {...props}
@@ -92,7 +92,7 @@ const CountryInfoModal = (props) => {
         Country Info
       </Button>
 
-      <MyVerticallyCenteredModal
+      <VertModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         statdata={props.statData}
