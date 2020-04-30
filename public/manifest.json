@@ -1,0 +1,8 @@
+{
+  "short_name": "Covid19Sa",
+  "name": "Covid-19 Stats South Africa",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
